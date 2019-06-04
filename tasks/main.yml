@@ -34,6 +34,11 @@
   tags:
       - install
 
+  # Certificates need to be created and deployed before config can be updated
+- include: xpack/security/elasticsearch-security-certificates.yml
+  when: '"security" in es_xpack_features'
+
+
 - name: include elasticsearch-config.yml
   include: elasticsearch-config.yml
   tags:

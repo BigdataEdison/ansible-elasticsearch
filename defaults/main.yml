@@ -1,5 +1,5 @@
 ---
-es_version: "7.0.1"
+es_version: "7.1.0"
 es_use_snapshot_release: false
 es_enable_xpack: true
 es_package_name: "elasticsearch"
@@ -45,3 +45,11 @@ conf_dir: ''
 data_dirs: ''
 # JVM custom parameters
 es_jvm_custom_parameters: ''
+
+# These are used for specifying the location of certificat and
+# key files to be deployed when setting up X-Pack security.
+# Leave as empty strings in order to skip installation.
+es_xpack_ssl_key_src: ''
+es_xpack_ssl_certificate_src: ''
+es_xpack_ssl_certificate_authorities_src: ''
+es_xpack_certificates_on_host: 'no'
