@@ -1,4 +1,5 @@
 .kitchen/
+.DS_Store
 license*.json
 *.pyc
 .vendor
