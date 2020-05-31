@@ -1,8 +1,3 @@
-
-{% if es_config %}
-{{ es_config | to_nice_yaml }}
-{% endif %}
-
 {% if es_config['cluster.name'] is not defined %}
 cluster.name: elasticsearch
 {% endif %}
@@ -11,9 +6,6 @@ cluster.name: elasticsearch
 node.name: {{inventory_hostname}}-{{es_instance_name}}
 {% endif %}
 
-#################################### Paths ####################################
-
-# Path to directory containing configuration (this file and logging.yml):
 
 {% if (es_version is version_compare('6.0.0', '<')) %}
 path.conf: {{ conf_dir }}
@@ -89,4 +81,11 @@ xpack.notification.email:
         user: {{ es_mail_config['user'] }}
         password: {{ es_mail_config['pass'] }}
         {% endif %}  
+{% endif %}
+
+
+
+
+{% if es_config %}
+{{ es_config | to_nice_yaml }}
 {% endif %}
